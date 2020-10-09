@@ -24,7 +24,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/posts">Posts<span class="sr-only"></span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/carreira">Carreira<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
@@ -42,35 +42,30 @@
             <li class="breadcrumb-item active" aria-current="page">Carreira</li>
         </ol>
     </nav>
-</div>
+
 
 <!--CARDS-->
 
-<div class="row row-cols-1 row-cols-md-2" style="margin:0 20% 0 20%;" >
-    <div th:each="work : ${works}" >
-        <div class="col mb-4">
-            <div class="card shadow-sm">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card shadow-sm bg-white rounded "th:each="work : ${works}" style="margin-top:20px">
                 <div class="card-body">
 
 
 <!--                    TITULO DO CARD-->
                     <a th:href="${(#mvc.url('WC#getCarreiraDetails').arg(0,work.id)).build()}">
                         <h5 class="card-title text-dark">
-                            <span th:text="${work.titulo}"></span><span class="material-icons" th:text="${work.icon}"></span>
+                            <span th:text="${work.titulo}" style="font-weight: bold; color: black; padding-top: 5px;"></span><span class="material-icons" th:text="${work.icon}"></span>
                         </h5>
                     </a>
 
 <!--                    TEXTO DO CARD-->
                     <p class="card-text" >
-                        <span th:utext="${#strings.abbreviate(work.texto, 200)}"></span>
+                        <span th:utext="${#strings.abbreviate(work.texto, 400)}"></span>
                     </p>
 
                 </div>
             </div>
-        </div>
-
     </div>
+</div>
 
 </div>
 </body>

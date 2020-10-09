@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.thymeleaf.context.IWebContext;
 
 @Configuration
 @EnableWebSecurity
@@ -19,7 +18,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             "/posts/{id}",
             "/",
             "/image/**",
-            "/carreira"
+            "/carreira",
+            "/carreira/{id}",
+            "/sobremim"
     };
 
     @Override
