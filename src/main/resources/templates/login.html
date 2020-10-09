@@ -23,7 +23,7 @@
                             Nome de usuario ou senha incorretos.
                         </div>
                         <div style="padding: 20px 50px" th:if="${param.logout}" class="alert alert-success">
-                            Você fez log out.
+                            Você fez logout.
                         </div>
             <div class="form-group" style="padding: 0px 50px">
                 <input name="username" class="form-control" id="username" type="text" placeholder="Userame" />
@@ -40,12 +40,12 @@
     <form name="f" th:action="@{/login}" method="post" class="shadow d-md-none" style="margin:0 10%">
 
         <h1 style="padding:50px 50px 20px 50px;">Shall you pass?</h1>
-        <!--            <div th:if="${param.error}" class="alert alert-error">-->
-        <!--                Invalid username and password.-->
-        <!--            </div>-->
-        <!--            <div th:if="${param.logout}" class="alert alert-success">-->
-        <!--                You have been logged out.-->
-        <!--            </div>-->
+                    <div th:if="${param.error}" class="alert alert-error">
+                        Nome de usuario ou senha incorretos.
+                    </div>
+                    <div th:if="${param.logout}" class="alert alert-success">
+                        Você fez logout.
+                    </div>
         <div class="form-group" style="padding: 0px 50px">
             <input name="username" class="form-control" id="usernameSm" type="text" placeholder="Userame" />
         </div>
